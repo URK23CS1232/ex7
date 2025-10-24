@@ -1,0 +1,283 @@
+/* App.css - Enhanced BMI Calculator Styles */
+
+:root {
+  --underweight: linear-gradient(135deg, #FFD700, #FFA500);
+  --normal: linear-gradient(135deg, #00b09b, #96c93d);
+  --overweight: linear-gradient(135deg, #ff9a00, #ff6a00);
+  --obese: linear-gradient(135deg, #ff416c, #ff4b2b);
+}
+
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.card-header {
+  border-radius: 20px 20px 0 0 !important;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+/* BMI Value Display */
+.bmi-value {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bmi-value.underweight { background: linear-gradient(135deg, #FFD700, #FFA500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.bmi-value.normal { background: linear-gradient(135deg, #00b09b, #96c93d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.bmi-value.overweight { background: linear-gradient(135deg, #ff9a00, #ff6a00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.bmi-value.obese { background: linear-gradient(135deg, #ff416c, #ff4b2b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+/* Status Badge */
+.status-badge {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  color: white;
+  border: 3px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.status-badge.underweight {
+  background: var(--underweight);
+  border-color: #FFD700;
+}
+
+.status-badge.normal {
+  background: var(--normal);
+  border-color: #00b09b;
+}
+
+.status-badge.overweight {
+  background: var(--overweight);
+  border-color: #ff9a00;
+}
+
+.status-badge.obese {
+  background: var(--obese);
+  border-color: #ff416c;
+}
+
+.status-badge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* BMI Scale Visualization */
+.bmi-scale {
+  display: flex;
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 1rem 0;
+  border: 2px solid #e9ecef;
+}
+
+.scale-section {
+  flex: 1;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 8px;
+  margin: 0 2px;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.scale-section.underweight { background: rgba(255, 215, 0, 0.2); color: #b38f00; }
+.scale-section.normal { background: rgba(0, 176, 155, 0.2); color: #007a6b; }
+.scale-section.overweight { background: rgba(255, 154, 0, 0.2); color: #b36b00; }
+.scale-section.obese { background: rgba(255, 65, 108, 0.2); color: #b3002d; }
+
+.scale-section.active {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+}
+
+.scale-section.underweight.active { background: rgba(255, 215, 0, 0.4); border: 2px solid #FFD700; }
+.scale-section.normal.active { background: rgba(0, 176, 155, 0.4); border: 2px solid #00b09b; }
+.scale-section.overweight.active { background: rgba(255, 154, 0, 0.4); border: 2px solid #ff9a00; }
+.scale-section.obese.active { background: rgba(255, 65, 108, 0.4); border: 2px solid #ff416c; }
+
+/* Form Controls */
+.form-control {
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+  padding: 15px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.form-control:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.3rem rgba(102, 126, 234, 0.25);
+  background: white;
+  transform: translateY(-2px);
+}
+
+.form-label {
+  font-weight: 600;
+  color: #495057;
+  font-size: 1.1rem;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: none;
+  padding: 15px 25px;
+  font-size: 1.1rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  box-shadow: 0 6px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.5);
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+}
+
+.btn-outline-secondary {
+  border: 2px solid #6c757d;
+  color: #6c757d;
+  background: transparent;
+}
+
+.btn-outline-secondary:hover {
+  background: #6c757d;
+  border-color: #6c757d;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(108, 117, 125, 0.4);
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Results Section */
+.results-section {
+  animation: slideInUp 0.5s ease-out;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .bmi-value {
+    font-size: 3rem;
+  }
+  
+  .status-badge {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+  }
+  
+  .scale-section {
+    font-size: 0.7rem;
+    padding: 0.4rem;
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  .classification-guide .d-flex {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .bmi-value {
+    font-size: 2.5rem;
+  }
+  
+  .status-badge {
+    font-size: 0.9rem;
+    padding: 0.5rem 1.2rem;
+  }
+  
+  .container {
+    padding: 10px;
+  }
+}
+
+/* Classification Guide */
+.classification-guide {
+  background: rgba(248, 249, 250, 0.8);
+  border-radius: 10px;
+  padding: 1rem;
+  border-left: 4px solid #667eea;
+}
+
+/* Form Text */
+.form-text {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-top: 0.5rem;
+}
+
+/* Card Header Icon Effects */
+.card-header i {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -5px, 0);
+  }
+}
